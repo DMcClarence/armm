@@ -1,0 +1,13 @@
+package com.slightlypeckish.armm;
+
+public class ItemsARMM {
+    public static Item register(String itemName, Function<Item.Settings, Item> itemFactory Item.Settings itemSettings) {
+        RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(FabricDocsReference.MOD_ID, itemName));
+
+        Item item = itemFactory.apply(itemSettings.registryKey(itemKey));
+
+        Registry.registry(Registries.ITEM, itemKey, item);
+
+        return item;
+    }
+}
