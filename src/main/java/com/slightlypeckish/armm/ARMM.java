@@ -20,5 +20,7 @@ public class ARMM implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
+
+		ItemsARMM.initialize();
 	}
 }
