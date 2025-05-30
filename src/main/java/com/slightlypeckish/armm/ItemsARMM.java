@@ -26,13 +26,13 @@ import net.minecraft.util.Identifier;
 public class ItemsARMM {
     private static final Item RAW_LAMB = register("raw_lamb", Item::new, new Item.Settings().food(new FoodComponent.Builder().build()));
     private static final Item COOKED_LAMB = register("cooked_lamb", Item::new, new Item.Settings().food(new FoodComponent.Builder().build()));
-    private static final Identifier WHITE_SHEEP = Identifier.of("minecraft", "entities/sheep");
+    private static final Identifier SHEEP_ID = Identifier.of("minecraft", "entities/sheep");
 
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(ItemsARMM.RAW_LAMB));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(ItemsARMM.COOKED_LAMB));
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
-            if(source.isBuiltin() && WHITE_SHEEP.equals(key.getValue())) {
+            if(source.isBuiltin() && SHEEP_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                     .rolls(ConstantLootNumberProvider.create(1))
                     .conditionally(RandomChanceLootCondition.builder(1.0f))
