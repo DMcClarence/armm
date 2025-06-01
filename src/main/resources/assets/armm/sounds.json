@@ -6,5 +6,23 @@
                 "stream": true
             }
         ]
+    },
+
+    "pixel_farm": {
+        "sounds": [
+            {
+                "name": "armm:pixel_farm",
+                "stream": true
+            }
+        ]
+    },
+
+    "galactica": {
+        "sounds": [
+            {
+                "name": "armm:galactica",
+                "stream": true
+            }
+        ]
     }
 }

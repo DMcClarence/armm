@@ -31,6 +31,14 @@ public class ItemsARMM {
     private static final RegistryKey<JukeboxSong> BOSS_STAGE_KEY = registerSong("boss_stage");
     private static final Item BOSS_STAGE_MUSIC_DISK = register("boss_stage_music_disk", Item::new, new Item.Settings().jukeboxPlayable(BOSS_STAGE_KEY).maxCount(1));
 
+    private static final SoundEvent PIXEL_FARM = registerSoundEvent("pixel_farm");
+    private static final RegistryKey<JukeboxSong> PIXEL_FARM_KEY = registerSong("pixel_farm");
+    private static final Item PIXEL_FARM_MUSIC_DISK = register("pixel_farm_music_disk", Item::new, new Item.Settings().jukeboxPlayable(PIXEL_FARM_KEY).maxCount(1));
+
+    private static final SoundEvent GALACTICA = registerSoundEvent("galactica");
+    private static final RegistryKey<JukeboxSong> GALACTICA_KEY = registerSong("galactica");
+    private static final Item GALACTICA_MUSIC_DISK = register("galactica_music_disk", Item::new, new Item.Settings().jukeboxPlayable(GALACTICA_KEY).maxCount(1));
+
     // LAMB ITEM VARIABLES
     private static final Item RAW_LAMB = register("raw_lamb", Item::new, new Item.Settings().food(new FoodComponent.Builder().build()));
     private static final Item COOKED_LAMB = register("cooked_lamb", Item::new, new Item.Settings().food(new FoodComponent.Builder().build()));
@@ -55,6 +63,8 @@ public class ItemsARMM {
 
         // MUSIC DISK ITEM INITIALIZATIONS
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register((itemGroup) -> itemGroup.add(ItemsARMM.BOSS_STAGE_MUSIC_DISK));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register((itemGroup) -> itemGroup.add(ItemsARMM.PIXEL_FARM_MUSIC_DISK));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register((itemGroup) -> itemGroup.add(ItemsARMM.GALACTICA_MUSIC_DISK));
     }
 
     public static Item register(String itemName, Function<Item.Settings, Item> itemFactory, Item.Settings itemSettings) {

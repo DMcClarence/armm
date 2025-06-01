@@ -1,0 +1,8 @@
+{
+    "comparator_output": 15,
+    "description": {
+        "translate": "item.armm.galactica_music_disk.desc"
+    },
+    "length_in_seconds": 26.0,
+    "sound_event": "armm:galactica"
+}

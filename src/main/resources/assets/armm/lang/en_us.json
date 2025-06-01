@@ -1,6 +1,13 @@
 {
   "item.armm.raw_lamb": "Raw Lamb",
   "item.armm.cooked_lamb": "Cooked Lamb",
+
   "item.armm.boss_stage_music_disk": "Music Disk",
-  "item.armm.boss_stage_music_disk.desc": "Scilque - Boss Stage"
+  "item.armm.boss_stage_music_disk.desc": "Scilque - Boss Stage",
+
+  "item.armm.pixel_farm_music_disk": "Music Disk",
+  "item.armm.pixel_farm_music_disk.desc": "Scilque - Pixel Farm",
+
+  "item.armm.galactica_music_disk": "Music Disk",
+  "item.armm.galactica_music_disk.desc": "Scilque - Galactica"
 }
