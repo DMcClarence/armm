@@ -24,11 +24,16 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
 public class ItemsARMM {
+    // MUSIC DISK ITEM VARIABLES
+    private static final Item UNIDENTIFIED_MUSIC_DISK = register("unidentified_music_disk", Item::new, new Item.Settings());
+
+    // LAMB ITEM VARIABLES
     private static final Item RAW_LAMB = register("raw_lamb", Item::new, new Item.Settings().food(new FoodComponent.Builder().build()));
     private static final Item COOKED_LAMB = register("cooked_lamb", Item::new, new Item.Settings().food(new FoodComponent.Builder().build()));
     private static final Identifier SHEEP_ID = Identifier.of("minecraft", "entities/sheep");
 
     public static void initialize() {
+        // LAMB ITEM INITIALIZATIONS
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(ItemsARMM.RAW_LAMB));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(ItemsARMM.COOKED_LAMB));
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
@@ -43,6 +48,9 @@ public class ItemsARMM {
                 tableBuilder.pool(poolBuilder);
             }
         });
+
+        // MUSIC DISK ITEM INITIALIZATIONS
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register((itemGroup) -> itemGroup.add(ItemsARMM.UNIDENTIFIED_MUSIC_DISK));
     }
 
     public static Item register(String itemName, Function<Item.Settings, Item> itemFactory, Item.Settings itemSettings) {
