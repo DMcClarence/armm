@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "armm:item/pxiel_farm_music_disk"
+        "layer0": "armm:item/pixel_farm_music_disk"
     }
 }
