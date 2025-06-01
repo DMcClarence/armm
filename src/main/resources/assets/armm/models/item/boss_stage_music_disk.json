@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "armm:item/unidentified_music_disk"
+        "layer0": "armm:item/boss_stage_music_disk"
     }
 }

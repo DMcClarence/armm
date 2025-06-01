@@ -1,0 +1,8 @@
+{
+    "comparator_output": 15,
+    "description": {
+        "translate": "item.armm.boss_stage_music_disk.desc"
+    },
+    "length_in_seconds": 55.0,
+    "sound_event": "armm:boss_stage"
+}

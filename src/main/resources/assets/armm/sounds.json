@@ -1,0 +1,10 @@
+{
+    "boss_stage": {
+        "sounds": [
+            {
+                "name": "armm:boss_stage",
+                "stream": true
+            }
+        ]
+    }
+}

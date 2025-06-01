@@ -1,6 +1,6 @@
 {
     "model": {
         "type": "minecraft:model",
-        "model": "armm:item/unidentified_music_disk"
+        "model": "armm:item/boss_stage_music_disk"
     }
 }

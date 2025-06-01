@@ -4,6 +4,7 @@ import java.util.function.Function;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
+import net.minecraft.block.jukebox.JukeboxSong;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -21,11 +22,14 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 public class ItemsARMM {
     // MUSIC DISK ITEM VARIABLES
-    private static final Item UNIDENTIFIED_MUSIC_DISK = register("unidentified_music_disk", Item::new, new Item.Settings());
+    private static final SoundEvent BOSS_STAGE = registerSoundEvent("boss_stage");
+    private static final RegistryKey<JukeboxSong> BOSS_STAGE_KEY = registerSong("boss_stage");
+    private static final Item BOSS_STAGE_MUSIC_DISK = register("boss_stage_music_disk", Item::new, new Item.Settings().jukeboxPlayable(BOSS_STAGE_KEY).maxCount(1));
 
     // LAMB ITEM VARIABLES
     private static final Item RAW_LAMB = register("raw_lamb", Item::new, new Item.Settings().food(new FoodComponent.Builder().build()));
@@ -50,7 +54,7 @@ public class ItemsARMM {
         });
 
         // MUSIC DISK ITEM INITIALIZATIONS
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register((itemGroup) -> itemGroup.add(ItemsARMM.UNIDENTIFIED_MUSIC_DISK));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register((itemGroup) -> itemGroup.add(ItemsARMM.BOSS_STAGE_MUSIC_DISK));
     }
 
     public static Item register(String itemName, Function<Item.Settings, Item> itemFactory, Item.Settings itemSettings) {
@@ -61,5 +65,14 @@ public class ItemsARMM {
         Registry.register(Registries.ITEM, itemKey, item);
 
         return item;
+    }
+
+    public static SoundEvent registerSoundEvent(String soundName) {
+        Identifier soundID = Identifier.of(ARMM.MOD_ID, soundName);
+        return Registry.register(Registries.SOUND_EVENT, soundID, SoundEvent.of(soundID));
+    }
+
+    public static RegistryKey<JukeboxSong> registerSong(String songName) {
+        return RegistryKey.of(RegistryKeys.JUKEBOX_SONG, Identifier.of(ARMM.MOD_ID, songName));
     }
 }

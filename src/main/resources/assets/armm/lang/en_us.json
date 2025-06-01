@@ -1,5 +1,6 @@
 {
   "item.armm.raw_lamb": "Raw Lamb",
   "item.armm.cooked_lamb": "Cooked Lamb",
-  "item.armm.unidentified_music_disk": "Unidentified Music Disk"
+  "item.armm.boss_stage_music_disk": "Music Disk",
+  "item.armm.boss_stage_music_disk.desc": "Scilque - Boss Stage"
 }
